@@ -1,5 +1,9 @@
+# Benton Stacy 10/02/2019
+# Description: A GPA calculator that involves weight from credit hours.
 from typing import Any
 
+print("Welcome to my calculator!")
+print("Benton Stacy, 10/02/2019")
 classes = 1  # Initialize classes var, which stores num of classes taken
 classCreditHrs = 0  # Initialize per-class credit hr storage
 totalCreditHrs = 0
