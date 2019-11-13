@@ -15,7 +15,33 @@ def GPACalc():
         maxN = int(input("Enter the number of courses you are taking. "))  # Sets number of courses taken
         while classes < maxN + 1:
             classCreditHrs = int(input("How many credit hours is your class number " + str(classes) + "? "))
-            classGrade = float(input("What is your current grade in class number " + str(classes) + "? "))
+            classGrade = input("What is your current grade in class number " + str(classes) + "? ")
+            if classGrade >= "0" and classGrade <= "99999":
+                classGrade = float(classGrade)
+            elif classGrade == "A+" or classGrade == "a+" or classGrade == "A" or classGrade == "a":
+                classGrade = 95
+            elif classGrade == "A-" or classGrade == "a-":
+                classGrade = 91.6666667
+            elif classGrade == "B+" or classGrade == "b+":
+                classGrade = 88.3333333
+            elif classGrade == "B" or classGrade == "b":
+                classGrade = 85
+            elif classGrade == "B-" or classGrade == "b-":
+                classGrade = 81.6666667
+            elif classGrade == "C+" or classGrade == "c+":
+                classGrade = 78.3333333
+            elif classGrade == "C" or classGrade == "c":
+                classGrade = 75
+            elif classGrade == "C-" or classGrade == "c-":
+                classGrade = 71.6666667
+            elif classGrade == "D+" or classGrade == "d+":
+                classGrade = 68.3333333
+            elif classGrade == "D" or classGrade == "d":
+                classGrade = 65
+            elif classGrade == "D-" or classGrade == "d-":
+                classGrade = 61.6666667
+            else:
+                classGrade = 0
             if classGrade < 65:  # Sets grades lower than 65 to an automatic F (0.0 GPA) and ensures they don't fall below 0
                 classGrade = 55
             elif classGrade > 95:  # Consistency. Since 100% equals 95% in GPA, this removes the break in the function.

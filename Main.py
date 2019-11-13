@@ -30,7 +30,9 @@ while rerun:
     print("Type \"calculator\" to access a list of calculators.")
     print("Type \"other\" to access a list of other programs.")
     programCat = str(input("What program would you like to run? "))
-    if programCat == "calculator" or programCat == "Calculator" or programCat == "calculators" or programCat == "Calculators" or programCat == "1":
+    if programCat == "calculator" or programCat == "Calculator" or programCat == "calculators" or programCat == \
+            "Calculators" or programCat == "C" or programCat == "c" or programCat == "Calc" or programCat == "calc" or \
+            programCat == "1":
         print("Type \"calculator\" to access a basic calculator.")
         print("Type \"gpa\" to access a GPA calculator.")
         print("Type \"food\" to access a food price calculator.")
@@ -39,9 +41,9 @@ while rerun:
         print("Type \"max\" to access a calculator that finds the maximum of a set of numbers.")
         print("Type \"circle\" to access a circle area calculator.")
         calcCat = str(input())
-        if calcCat == "calculator" or calcCat == "Calculator" or calcCat == "1":
+        if calcCat == "calculator" or calcCat == "Calculator" or calcCat == "c" or calcCat == "C" or calcCat == "1":
             calculator()
-        elif calcCat == "gpa" or calcCat == "GPA" or calcCat == "Gpa" or calcCat == "2":
+        elif calcCat == "gpa" or calcCat == "GPA" or calcCat == "Gpa" or calcCat == "g" or calcCat == "G" or calcCat == "2":
             GPACalc()
         elif calcCat == "food" or calcCat == "Food" or calcCat == "3":
             foodCalc()
@@ -55,7 +57,8 @@ while rerun:
             circleArea()
         else:
             print("Error. Ensure that you spelled your input correctly.")
-    elif programCat == "other" or programCat == "Other" or programCat == "others" or programCat == "Others" or programCat == "2":
+    elif programCat == "other" or programCat == "Other" or programCat == "others" or programCat == "Others" or \
+            programCat == "O" or programCat == "o" or programCat == "2":
         print("Type \"water\" to determine whether water is boiling.")
         print("Type \"graduation\" to determine whether you are set to graduate college.")
         print("Type \"grade\" to tell how good your grade is.")
@@ -79,6 +82,9 @@ while rerun:
             numberComparison()
         else:
             print("Error. Ensure that you spelled your input correctly.")
+
+    elif programCat == "Exit" or programCat == "exit" or programCat == "E" or programCat == "e" or programCat == " ":
+        loopCond = False
 
     else:
         print("Error. Ensure that you spelled your input correctly.")

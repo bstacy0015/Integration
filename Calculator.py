@@ -10,40 +10,45 @@
 def calculator():
     # Import the RNG
     import random
+    reCalc = True  # Initialize reCalc var, which prompts for a re-calculation of the GPA so long as it's true
+    while reCalc:
+        # Input -> store num1 as int (from str)
+        num1 = input("Enter first number: ")
+        if num1 == "rand":
+            num1 = random.randint(-100, 100)
+        else:
+            num1 = int(num1)
 
-    # Input -> store num1 as int (from str)
-    num1 = input("Enter first number: ")
-    if num1 == "rand":
-        num1 = random.randint(-100, 100)
-    else:
-        num1 = int(num1)
+        # Input -> store operation
+        operation = input("Enter the operation: ")
 
-    # Input -> store operation
-    operation = input("Enter the operation: ")
+        # Input -> store num2 as int (from str)
+        num2 = input("Enter second number: ")
+        if num2 == "rand":
+            num2 = random.randint(-100, 100)
+        else:
+            num2 = int(num2)
 
-    # Input -> store num2 as int (from str)
-    num2 = input("Enter second number: ")
-    if num2 == "rand":
-        num2 = random.randint(-100, 100)
-    else:
-        num2 = int(num2)
+        print("Processing.")
 
-    print("Processing.")
+        # Conditional for analysis of operation
+        if operation == "+":
+            print("Result: ", num1 + num2)
+        elif operation == "-":
+            print("Result: ", num1 - num2)
+        elif operation == "*":
+            print("Result: ", num1 * num2)
+        elif operation == "/":
+            print("Result: ", num1 / num2)
+        elif operation == "**":
+            print("Result: ", num1 ** num2)
+        elif operation == "%":
+            print("Result: ", num1 % num2)
 
-    # Conditional for analysis of operation
-    if operation == "+":
-        print("Result: ", num1 + num2)
-    elif operation == "-":
-        print("Result: ", num1 - num2)
-    elif operation == "*":
-        print("Result: ", num1 * num2)
-    elif operation == "/":
-        print("Result: ", num1 / num2)
-    elif operation == "**":
-        print("Result: ", num1 ** num2)
-    elif operation == "%":
-        print("Result: ", num1 % num2)
-
-    # Error handling
-    else:
-        print("User error. Check operation input.")
+        # Error handling
+        else:
+            print("User error. Check operation input.")
+        loopCond = input(
+            "Type a space to run the calculator again or anything else to quit.")  # Allows for calc to be redone.
+        if loopCond != " ":  # If space wasn't pressed:"
+            reCalc = False  # If reCalc = False, the loop deactivates, and since nothing follows, the program terminates.
