@@ -3,6 +3,27 @@
 
 
 def GPACalc():
+    def numCourses(num):
+        while True:
+            try:
+                userInput = int(input(num))
+            except ValueError:
+                print("Error. Please enter an integer for the number of courses you are taking.")
+                continue
+            else:
+                return userInput
+                break
+    def creditHr(num):
+        while True:
+            try:
+                userInput = int(input(num))
+            except ValueError:
+                print("Error. Please enter an integer for the amount of credit hours.")
+                continue
+            else:
+                return userInput
+                break
+
     print("Welcome to my calculator!")
     print("Benton Stacy, 10/02/2019")
     reCalc = True  # Initialize reCalc var, which prompts for a re-calculation of the GPA so long as it's true
@@ -12,9 +33,9 @@ def GPACalc():
         totalCreditHrs = 0
         classGrade = 0  # Initialize per-class grade storage
         weightedGrd = 0  # Initialize total weighted grade storage. This var will be used to add up these totals.
-        maxN = int(input("Enter the number of courses you are taking. "))  # Sets number of courses taken
+        maxN = numCourses("How many courses are you taking? ")  # Sets number of courses taken
         while classes < maxN + 1:
-            classCreditHrs = int(input("How many credit hours is your class number " + str(classes) + "? "))
+            classCreditHrs = creditHr("How many credit hours is your class number " + str(classes) + "? ")
             classGrade = input("What is your current grade in class number " + str(classes) + "? ")
             if classGrade >= "0" and classGrade <= "99999":
                 classGrade = float(classGrade)
@@ -40,13 +61,15 @@ def GPACalc():
                 classGrade = 65
             elif classGrade == "D-" or classGrade == "d-":
                 classGrade = 61.6666667
-            else:
+            elif classGrade == "F" or classGrade == "f":
                 classGrade = 0
-            if classGrade < 65:  # Sets grades lower than 65 to an automatic F (0.0 GPA) and ensures they don't fall below 0
+            else:
+                print("Error. Please enter either a grade as a percentage (decimals allowed) or as a letter grade.")
+            if classGrade < 65:  # Sets grades lower than 65 to an F (0.0 GPA) and ensures they don't fall below 0
                 classGrade = 55
             elif classGrade > 95:  # Consistency. Since 100% equals 95% in GPA, this removes the break in the function.
                 classGrade -= 5
-            weightedGrd += classCreditHrs * classGrade  # Accumulates weighted grade each run of the loop, to be operated
+            weightedGrd += classCreditHrs * classGrade  # Accumulates weighted grade each run of loop, to be operated
             # on.
             totalCreditHrs += classCreditHrs  # Accumulates credit hours, for upcoming operation.
             classes += 1  # Accumulates classes count (to avoid inf loop)
@@ -55,5 +78,5 @@ def GPACalc():
 
         print("Your GPA is", format(weightedGrd, ".3f"))  # Simply prints GPA, to 3 decimal places.
         loopCond = input("Type a space to run the calculator again or anything else to quit.")  # Allows for calc to be redone.
-        if loopCond != " ":  # If space wasn't pressed:"
+        if loopCond != " ":  # If space wasn't pressed:
             reCalc = False  # If reCalc = False, the loop deactivates, and since nothing follows, the program terminates.
