@@ -1,4 +1,4 @@
-# Benton Stacy 10/20/2019
+# Benton Stacy 11/19/2019
 # Description: A collection of my programs so far in Computer Science class.
 #   Requirements:
 #   1. add your name as a comment at top of every file
@@ -43,7 +43,8 @@ while rerun:
         calcCat = str(input())
         if calcCat == "calculator" or calcCat == "Calculator" or calcCat == "c" or calcCat == "C" or calcCat == "1":
             calculator()
-        elif calcCat == "gpa" or calcCat == "GPA" or calcCat == "Gpa" or calcCat == "g" or calcCat == "G" or calcCat == "2":
+        elif calcCat == "gpa" or calcCat == "GPA" or calcCat == "Gpa" or calcCat == "g" or calcCat == "G" or \
+                calcCat == "2":
             GPACalc()
         elif calcCat == "food" or calcCat == "Food" or calcCat == "3":
             foodCalc()
@@ -57,6 +58,7 @@ while rerun:
             circleArea()
         else:
             print("Error. Ensure that you spelled your input correctly.")
+
     elif programCat == "other" or programCat == "Other" or programCat == "others" or programCat == "Others" or \
             programCat == "O" or programCat == "o" or programCat == "2":
         print("Type \"water\" to determine whether water is boiling.")
@@ -65,14 +67,16 @@ while rerun:
         print("Type \"multiple\" to list all multiples of a given interval with a given start and end.")
         print("Type \"shape\" to make shapes out of numbers.")
         print("Type \"compare\" to compare your number with the computer's.")
-        otherCat = str(input())
+        otherCat: str = str(input())
         if otherCat == "water" or otherCat == "Water" or otherCat == "1":
             isTheWaterBoiling()
-        elif otherCat == "graduation" or otherCat == "Graduation" or otherCat == "grad" or otherCat == "Grad" or otherCat == "2":
+        elif otherCat == "graduation" or otherCat == "Graduation" or otherCat == "grad" or otherCat == "Grad" or \
+                otherCat == "2":
             gradReqs()
         elif otherCat == "grade" or otherCat == "Grade" or otherCat == "grd" or otherCat == "Grd" or otherCat == "3":
             qualityofGrade()
-        elif otherCat == "multiple" or otherCat == "Multiple" or otherCat == "mul" or otherCat == "Mul" or otherCat == "4":
+        elif otherCat == "multiple" or otherCat == "Multiple" or otherCat == "mul" or otherCat == "Mul" or \
+                otherCat == "4":
             multipleList()
         elif otherCat == "class" or otherCat == "Class" or otherCat == "5":
             classGradeCalc()
@@ -83,12 +87,13 @@ while rerun:
         else:
             print("Error. Ensure that you spelled your input correctly.")
 
-    elif programCat == "Exit" or programCat == "exit" or programCat == "E" or programCat == "e" or programCat == " ":
+    elif programCat == "Exit" or programCat == "exit" or programCat == "E" or programCat == "e" or programCat == "":
         loopCond = False
 
     else:
         print("Error. Ensure that you spelled your input correctly.")
-    loopCond = input("Type a space to run the program again or anything else to quit the main program.")  # Allows for rerun.
+    loopCond = input("Type a space to run the program again or anything else to quit the main program. ")  # Allows for
+    # rerun.
     if loopCond != " ":  # If space wasn't pressed:"
         rerun = False  # If rerun = False, the loop deactivates, and the program terminates after saying "Done!"
 print("Done!")
