@@ -7,40 +7,31 @@ def GPACalc():
         while True:
             try:
                 userInput = int(input(num))
+                return userInput
             except ValueError:
                 print("Error. Please enter an integer for the number of courses you are taking.")
-                continue
             except:
                 print("Error: unknown.")
-            else:
-                return userInput
-                break
 
     def creditHrF(num):
         while True:
             try:
                 userInput = int(input(num))
+                return userInput
             except ValueError:
                 print("Error. Please enter an integer for the amount of credit hours.")
-                continue
             except:
                 print("Error: unknown.")
-            else:
-                return userInput
-                break
 
     def classGradeF(num):
         while True:
             try:
                 userInput = input(num)
+                return userInput
             except ValueError:
                 print("Error. Please enter either a grade as a percentage (decimals allowed) or as a letter grade.")
-                continue
             except:
                 print("Error: unknown.")
-            else:
-                return userInput
-                break
 
     print("Welcome to my calculator!")
     print("Benton Stacy, 10/02/2019")
