@@ -1,20 +1,22 @@
-# Benton Stacy 09/12/2019 - 09/22/2019
-# Description: A calculator with an RNG function if you can't think of a number.
-#   Requirements:
-#   1. add your name as a comment at top of every file
-#   2. add a description of the program as a comment at top
-#   3. simple I/O: add a greeting / introduction to the user
-#   4. basic computation: use arithmetic operators
+"""
+A calculator with an RNG function if you can't think of a number.
+Type in "r" or "rand" per number to activate RNG.
+__author__ = Benton Stacy
+"""
 
 
 def calculator():
-    # Import the RNG
-    import random
-    reCalc = True  # Initialize reCalc var, which prompts for a re-calculation of the GPA so long as it's true
-    while reCalc:
+    """
+    The top-level function run in Main.py
+    Will process the entire user input, calculation, and output.
+    """
+    import random  # Import the RNG
+    re_calc = True  # Initialize re_calc var, which prompts for a
+    # re-calculation of the GPA so long as it's true
+    while re_calc:
         # Input -> store num1 as int (from str)
         num1 = input("Enter first number: ")
-        if num1 == "rand":
+        if num1 == "rand" or num1 == "r":
             num1 = random.randint(-100, 100)
         else:
             num1 = int(num1)
@@ -24,7 +26,7 @@ def calculator():
 
         # Input -> store num2 as int (from str)
         num2 = input("Enter second number: ")
-        if num2 == "rand":
+        if num2 == "rand" or num2 == "r":
             num2 = random.randint(-100, 100)
         else:
             num2 = int(num2)
@@ -48,7 +50,9 @@ def calculator():
         # Error handling
         else:
             print("User error. Check operation input.")
-        loopCond = input(
-            "Type a space to run the calculator again or anything else to quit.")  # Allows for calc to be redone.
-        if loopCond != " ":  # If space wasn't pressed:"
-            reCalc = False  # If reCalc = False, the loop deactivates, and since nothing follows, the program terminates.
+        loop_cond = input(
+            "Type a space to run the calculator again or anything else to "
+            "quit.")  # Allows for calc to be redone.
+        if loop_cond != " ":  # If space wasn't pressed:"
+            re_calc = False  # If re_calc = False, the loop deactivates,
+            # and since nothing follows, the program terminates.
