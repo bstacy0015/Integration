@@ -17,7 +17,7 @@ from GPACalc import gpa_calc
 from POGIL3 import food_calc
 from POGIL6a import sale_calculation
 from POGIL6b import is_the_water_boiling
-from POGIL6c import gradReqs
+from POGIL6c import grad_requirements
 from POGIL7 import qualityofGrade
 from POGIL9 import multipleList
 from POGIL10a import classGradeCalc
@@ -89,7 +89,7 @@ while rerun:
         elif otherCat == "graduation" or otherCat == "Graduation" or \
                 otherCat == "grad" or otherCat == "Grad" or \
                 otherCat == "2":
-            gradReqs()
+            grad_requirements()
         elif otherCat == "grade" or otherCat == "Grade" or otherCat == "grd" \
                 or otherCat == "Grd" or otherCat == "3":
             qualityofGrade()
