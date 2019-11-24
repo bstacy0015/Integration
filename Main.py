@@ -15,7 +15,7 @@ __author__ = Benton Stacy
 from Calculator import calculator
 from GPACalc import gpa_calc
 from POGIL3 import food_calc
-from POGIL6a import saleCalc
+from POGIL6a import sale_calculation
 from POGIL6b import isTheWaterBoiling
 from POGIL6c import gradReqs
 from POGIL7 import qualityofGrade
@@ -60,7 +60,7 @@ while rerun:
         elif calcCat == "food" or calcCat == "Food" or calcCat == "3":
             food_calc()
         elif calcCat == "sale" or calcCat == "Sale" or calcCat == "4":
-            saleCalc()
+            sale_calculation()
         elif calcCat == "class" or calcCat == "Class" or calcCat == "5":
             classGradeCalc()
         elif calcCat == "max" or calcCat == "Max" or calcCat == "maximum" or \

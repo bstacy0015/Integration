@@ -45,26 +45,28 @@ def food_calc():
             except:
                 print("Error: unknown.")
 
-    re_calc = True
+    re_calc = True  # Initialize re_calc var, which prompts for a
+    # re-calculation of the GPA so long as it's true.
     while re_calc:
-        cost_hamburgers = cost_format("What is the cost of a hamburger?")
+        cost_hamburgers = cost_format("What is the cost of a hamburger? ")
         total_hamburgers = item_number_format("How many hamburgers did you "
-                                              "order?")
-        h = cost_hamburgers * total_hamburgers
+                                              "order? ")
+        h = cost_hamburgers * total_hamburgers  # Cost * amount of hamburgers
 
-        cost_fries = cost_format("What is the cost of an order of fries?")
-        total_fries = item_number_format("How many fries did you order?")
-        f = cost_fries * total_fries
+        cost_fries = cost_format("What is the cost of an order of fries? ")
+        total_fries = item_number_format("How many fries did you order? ")
+        f = cost_fries * total_fries  # Cost * amount of fries
 
-        cost_drinks = cost_format("What is the cost of a drink?")
-        total_drinks = item_number_format("How many drinks did you order?")
-        d = cost_drinks * total_drinks
+        cost_drinks = cost_format("What is the cost of a drink? ")
+        total_drinks = item_number_format("How many drinks did you order? ")
+        d = cost_drinks * total_drinks  # Cost * amount of drinks
 
         print("Calculating.")
         print("Calculating..")
 
-        total_cost = h + f + d
-        print("Your total cost is $", format(total_cost, ".2f"), sep="")
+        total_cost = h + f + d  # Calculates total cost
+        print("Your total cost is $", format(total_cost, ".2f"), sep="")  #
+        # Prints total cost
         loop_condition = input("Type a space to run the calculator again or "
                                "anything else to quit. ")  # Allows for calc
         # to be redone.
