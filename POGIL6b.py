@@ -10,13 +10,28 @@ def is_the_water_boiling():
     The top-level function run in Main.py. Controls all user input,
     calculation, and output.
     """
+    def temperature_format(temp):
+        """
+        Will check for errors when user inputs the temperature
+        :param temp: The temperature of the water
+        """
+        while True:
+            try:
+                user_input = float(input(temp))
+                return user_input
+            except ValueError:
+                print("Error. Please ensure that you correctly typed in the "
+                      "temperature of the water, in Fahrenheit. You may type "
+                      "in the amount as a number, with decimals.")
+            except:
+                print("Error: unknown.")
 
     re_calc = True  # Initialize re_calc var, which prompts for a
     # re-calculation of the GPA so long as it's true.
     while re_calc:
 
-        temperature = int(input("Enter the water temperature in degrees "
-                                "Fahrenheit: "))
+        temperature = temperature_format("Enter the water temperature in "
+                                         "degrees Fahrenheit: ")
         if temperature >= 212:  # If the water is boiling:
             print("Water is boiling.")
             print("That's really hot!")
