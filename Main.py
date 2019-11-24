@@ -16,7 +16,7 @@ from Calculator import calculator
 from GPACalc import gpa_calc
 from POGIL3 import food_calc
 from POGIL6a import sale_calculation
-from POGIL6b import isTheWaterBoiling
+from POGIL6b import is_the_water_boiling
 from POGIL6c import gradReqs
 from POGIL7 import qualityofGrade
 from POGIL9 import multipleList
@@ -85,7 +85,7 @@ while rerun:
         print("Type \"compare\" to compare your number with the computer's.")
         otherCat = str(input())
         if otherCat == "water" or otherCat == "Water" or otherCat == "1":
-            isTheWaterBoiling()
+            is_the_water_boiling()
         elif otherCat == "graduation" or otherCat == "Graduation" or \
                 otherCat == "grad" or otherCat == "Grad" or \
                 otherCat == "2":
