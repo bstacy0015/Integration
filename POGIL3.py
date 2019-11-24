@@ -10,20 +10,64 @@ def food_calc():
     The top-level function run in Main.py. Controls all user input,
     calculation, and output.
     """
-    cost_hamburgers = float(input("What is the cost of a hamburger?"))
-    total_hamburgers = int(input("How many hamburgers did you order?"))
-    h = cost_hamburgers * total_hamburgers
 
-    cost_fries = float(input("What is the cost of an order of fries?"))
-    total_fries = int(input("How many fries did you order?"))
-    f = cost_fries * total_fries
+    def cost_format(cost):
+        """
+        Will check for errors when user inputs a cost (used for all three
+        items)
+        :param cost: The price of the item in question
+        """
+        while True:
+            try:
+                user_input = float(input(cost))
+                return user_input
+            except ValueError:
+                print("Error. Please ensure that you correctly typed in the "
+                      "cost of the item. You may type in the amount as a "
+                      "number, with decimals.")
+            except:
+                print("Error: unknown.")
 
-    cost_drinks = float(input("What is the cost of a drink?"))
-    total_drinks = int(input("How many drinks did you order?"))
-    d = cost_drinks * total_drinks
+    def item_number_format(num):
+        """
+        Will check for errors when user inputs the amount of items bought (
+        used for all three items)
+        :param num: The amount of the item in question bought
+        """
+        while True:
+            try:
+                user_input = int(input(num))
+                return user_input
+            except ValueError:
+                print("Error. Please ensure that you correctly typed in the "
+                      "amount of the item. You may type in the amount as a "
+                      "number, with no decimals.")
+            except:
+                print("Error: unknown.")
 
-    print("Calculating.")
-    print("Calculating..")
+    re_calc = True
+    while re_calc:
+        cost_hamburgers = cost_format("What is the cost of a hamburger?")
+        total_hamburgers = item_number_format("How many hamburgers did you "
+                                              "order?")
+        h = cost_hamburgers * total_hamburgers
 
-    total_cost = h + f + d
-    print("Your total cost is $", total_cost, sep="")
+        cost_fries = cost_format("What is the cost of an order of fries?")
+        total_fries = item_number_format("How many fries did you order?")
+        f = cost_fries * total_fries
+
+        cost_drinks = cost_format("What is the cost of a drink?")
+        total_drinks = item_number_format("How many drinks did you order?")
+        d = cost_drinks * total_drinks
+
+        print("Calculating.")
+        print("Calculating..")
+
+        total_cost = h + f + d
+        print("Your total cost is $", format(total_cost, ".2f"), sep="")
+        loop_condition = input("Type a space to run the calculator again or "
+                               "anything else to quit. ")  # Allows for calc
+        # to be redone.
+        if loop_condition != " ":  # If space wasn't pressed:
+            re_calc = False  # If re_calc = False, the loop deactivates,
+            # and since nothing follows, the program terminates.

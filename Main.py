@@ -119,7 +119,7 @@ while rerun:
     if rerun:
         loopCond = input(
             "Type a space to run the program again or anything else to quit "
-            "the  main program. ")  # Allows for rerun.
+            "the main program. ")  # Allows for rerun.
     if loopCond != " ":  # If space wasn't pressed:"
         rerun = False  # If rerun = False, the loop deactivates, and the
         # program terminates after saying "Done!"
