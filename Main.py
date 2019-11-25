@@ -18,12 +18,12 @@ from POGIL3 import food_calc
 from POGIL6a import sale_calculation
 from POGIL6b import is_the_water_boiling
 from POGIL6c import grad_requirements
-from POGIL7 import qualityofGrade
-from POGIL9 import multipleList
-from POGIL10a import classGradeCalc
-from POGIL10b import shapeNumbers
-from POGIL11 import maxNumCalc
-from POGIL12 import circleArea
+from POGIL7 import grade_quality
+from POGIL9 import list_print
+from POGIL10a import student_grade
+from POGIL10b import shape_creator
+from POGIL11 import max_number_function
+from POGIL12 import circle_area
 from POGIL13 import numberComparison
 
 rerun = True  # Initialize rerun var, which prompts for an additional run of
@@ -62,12 +62,12 @@ while rerun:
         elif calcCat == "sale" or calcCat == "Sale" or calcCat == "4":
             sale_calculation()
         elif calcCat == "class" or calcCat == "Class" or calcCat == "5":
-            classGradeCalc()
+            student_grade()
         elif calcCat == "max" or calcCat == "Max" or calcCat == "maximum" or \
                 calcCat == "Maximum" or calcCat == "6":
-            maxNumCalc()
+            max_number_function()
         elif calcCat == "circle" or calcCat == "Circle" or calcCat == "7":
-            circleArea()
+            circle_area()
         else:
             print("Error. Ensure that you spelled your input correctly.")
 
@@ -92,15 +92,15 @@ while rerun:
             grad_requirements()
         elif otherCat == "grade" or otherCat == "Grade" or otherCat == "grd" \
                 or otherCat == "Grd" or otherCat == "3":
-            qualityofGrade()
+            grade_quality()
         elif otherCat == "multiple" or otherCat == "Multiple" or otherCat == \
                 "mul" or otherCat == "Mul" or \
                 otherCat == "4":
-            multipleList()
+            list_print()
         elif otherCat == "class" or otherCat == "Class" or otherCat == "5":
-            classGradeCalc()
+            student_grade()
         elif otherCat == "shape" or otherCat == "Shape" or otherCat == "6":
-            shapeNumbers()
+            shape_creator()
         elif otherCat == "compare" or otherCat == "Compare" or otherCat == "7":
             numberComparison()
         else:
